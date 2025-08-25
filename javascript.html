@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>JavaScript | ePortfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body class="with-subtle-hero">
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">My ePortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+        <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+        <li class="nav-item"><a class="nav-link active" href="javascript.html">JavaScript</a></li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="sub-hero text-center">
+  <div class="container">
+    <h1 class="fw-bold text-white mb-2">JavaScript — Interactivity & Data</h1>
+    <p class="text-white-50 mb-0">DOM updates, event handling, form validation, API requests, and persistence.</p>
+  </div>
+</header>
+
+<main class="container py-5">
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <h2 class="h5 fw-bold">DOM & Events</h2>
+      <div class="p-3 border rounded">
+        <p class="mb-2">Click to toggle highlight:</p>
+        <p id="demoText" class="mb-3">Hello DOM!</p>
+        <button id="toggleBtn" class="btn btn-sm btn-primary">Toggle Highlight</button>
+      </div>
+
+      <h2 class="h5 fw-bold mt-4">Form Validation (JS)</h2>
+      <form id="loginForm" class="p-3 border rounded">
+        <div class="mb-2">
+          <label class="form-label">Username</label>
+          <input id="u" class="form-control" minlength="3" required>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Password</label>
+          <input id="p" type="password" class="form-control" minlength="6" required>
+        </div>
+        <button class="btn btn-success btn-sm">Login</button>
+        <small id="loginMsg" class="text-danger ms-2"></small>
+      </form>
+      <div class="alert alert-info mt-3 small"><strong>What this shows:</strong> JS manipulating classes, listening for events, and client-side validation.</div>
+    </div>
+
+    <div class="col-lg-6">
+      <h2 class="h5 fw-bold">Fetch API (Simulated)</h2>
+      <div class="p-3 border rounded">
+        <p class="small mb-2">Load “remote” posts (locally mocked in <code>script.js</code>):</p>
+        <button id="loadPosts" class="btn btn-outline-primary btn-sm">Load Posts</button>
+        <ul id="postList" class="list-group list-group-numbered small mt-2"></ul>
+      </div>
+
+      <h2 class="h5 fw-bold mt-4">To-Do (localStorage)</h2>
+      <form id="todoForm" class="d-flex gap-2">
+        <input id="todoInput" class="form-control" placeholder="Add a task…"/>
+        <button class="btn btn-primary">Add</button>
+      </form>
+      <ul id="todoList" class="list-group mt-2 small"></ul>
+      <div class="alert alert-success mt-3 small"><strong>What this shows:</strong> State persistence with <code>localStorage</code>, list rendering, and deletion.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer text-center py-3">
+  <div class="container small">© 2025 | ePortfolio for CET138</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
