@@ -8,11 +8,11 @@
 /* Dark mode (toggled via .dark on body) */
 body.dark{
   background:#111;
-  color:#e7e7e7;
+  color:#cfc8c8;
 }
 body.dark .navbar,
 body.dark .footer{ background:#0b0b0b !important; }
-body.dark .card{ background:#1a1a1a; color:#e7e7e7; }
+body.dark .card{ background:#1a1a1a; color:#c7d0e9; }
 body.dark .table{ color:#e7e7e7; }
 
 /* Navbar */

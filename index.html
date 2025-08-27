@@ -1,95 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ePortfolio | CET138 Full Stack Development</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    /* Background Options */
+    body.bg-solid {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      /* Solid background */
+      color: #80789b;
+    }
+
+    body.bg-gradient-horizontal {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to right, #627fa1, #d6e0f0);
+      /* Horizontal gradient */
+      color: #271f44;
+    }
+
+    body.bg-gradient-vertical {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #eef2f7, #d6e0f0);
+      /* Vertical gradient */
+      color: #221844;
+    }
+
+    body.bg-gradient-diagonal {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(45deg, #a6b0bc, #d6e0f0) no-repeat fixed;
+      /* Diagonal */
+      color: #7e7796;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #93a3b4, #769fbb);
+    }
+
+    .navbar-brand {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-link {
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #f1faee !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(to right, rgba(46, 42, 96, 0.85), rgba(52, 152, 219, 0.85)),
+        url('https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227_1280.jpg') center/cover no-repeat;
+      color: white;
+      padding-top: 5rem;
+    }
+
+    .hero h1 {
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      animation: fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #ffffff;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .card-text {
+      color: #555;
+    }
+
+    /* Skills Icons */
+    .skills-icons i {
+      font-size: 3rem;
+      margin: 1rem;
+      color: #3498db;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .skills-icons i:hover {
+      transform: scale(1.2);
+      color: #2c3e50;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(to right, #d6e0f0, #eef2f7);
+      padding: 4rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Footer */
+    .footer {
+      background: #2c3e50;
+      color: #f1faee;
+    }
+  </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">My ePortfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="nav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
-        <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
-        <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
-        <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
-        <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
-       
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<header class="hero d-flex flex-column justify-content-center align-items-center text-center">
-  <div class="container">
-    <h1 class="display-4 fw-bold text-white">CET138 — Full Stack Development</h1>
-    <p class="lead text-white-50 mb-4">Assignment 1 — ePortfolio with clear demos and explanations</p>
-    <a href="fullstack.html" class="btn btn-light btn-lg shadow-sm">Start: What is Full Stack?</a>
-  </div>
-</header>
+<body class="bg-gradient-horizontal">
 
-<main class="container py-5">
-  <div class="row g-4">
-    <div class="col-md-6 col-xl-4">
-      <a class="card lift h-100 text-decoration-none" href="fullstack.html">
-        <div class="card-body">
-          <h5 class="card-title">What is Full Stack Development?</h5>
-          <p class="card-text">Front-end + Back-end + Database + DevOps overview, roles, and workflows.</p>
-          <span class="badge bg-primary">Concepts</span>
-        </div>
-      </a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">My ePortfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="bootstrap.html">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="col-md-6 col-xl-4">
-      <a class="card lift h-100 text-decoration-none" href="html.html">
-        <div class="card-body">
-          <h5 class="card-title">HTML</h5>
-          <p class="card-text">Semantic structure, forms, accessibility, and SEO basics.</p>
-          <span class="badge bg-success">Structure</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <a class="card lift h-100 text-decoration-none" href="css.html">
-        <div class="card-body">
-          <h5 class="card-title">CSS</h5>
-          <p class="card-text">Box model, Flexbox/Grid layouts, responsive design, and animations.</p>
-          <span class="badge bg-info">Design</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <a class="card lift h-100 text-decoration-none" href="bootstrap.html">
-        <div class="card-body">
-          <h5 class="card-title">Bootstrap</h5>
-          <p class="card-text">Grid system, components, utilities, and customization.</p>
-          <span class="badge bg-warning text-dark">Framework</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <a class="card lift h-100 text-decoration-none" href="javascript.html">
-        <div class="card-body">
-          <h5 class="card-title">JavaScript</h5>
-          <p class="card-text">DOM, events, fetch API, validation, and localStorage demo.</p>
-          <span class="badge bg-danger">Logic</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</main>
+  </nav>
 
-<footer class="footer text-center py-3">
-  <div class="container small">© 2025 | ePortfolio for CET138</div>
-</footer>
+  <!-- Hero -->
+  <header class="hero d-flex flex-column justify-content-center align-items-center text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">CET138 — Full Stack Development</h1>
+      <p class="lead mb-4">Assignment 1 — ePortfolio showcasing skills, concepts, and demos</p>
+      <a href="fullstack.html" class="btn btn-light btn-lg shadow-sm"> Start Learning</a>
+    </div>
+  </header>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/script.js"></script>
+  <!-- About Section -->
+  <section class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img
+          src="https://media.istockphoto.com/id/1224500457/photo/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpg?s=612x612&w=0&k=20&c=nHMypkMTU1HUUW85Zt0Ff7MDbq17n0eVeXaoM9Knt4Q="
+          alt="Coding Illustration" class="img-fluid rounded shadow-sm" />
+      </div>
+      <div class="col-lg-6">
+        <h2 class="section-title">About this ePortfolio</h2>
+        <p>
+          This ePortfolio is designed for <strong>CET138 Full Stack Development</strong>.
+          It highlights key technologies such as HTML, CSS, JavaScript, and Bootstrap with
+          explanations and practical demos. The purpose is to demonstrate understanding of
+          full stack concepts by building an interactive and visually engaging portfolio.
+        </p>
+        <ul>
+          <li>✔ Clear explanations of each technology</li>
+          <li>✔ Responsive design with Bootstrap</li>
+          <li>✔ Interactive JavaScript features</li>
+          <li>✔ Organized navigation with easy access</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="container py-5 text-center">
+    <h2 class="section-title">Technologies & Skills</h2>
+    <p class="mb-4">Core skills demonstrated in this portfolio</p>
+    <div class="skills-icons">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-bootstrap"></i>
+      <i class="fab fa-js-square"></i>
+      <i class="fas fa-database"></i>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <main class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4">
+        <a class="card h-100 text-decoration-none" href="fullstack.html">
+          <div class="card-body">
+            <h5 class="card-title">What is Full Stack Development?</h5>
+            <p class="card-text">Front-end + Back-end + Database + DevOps overview, roles, and workflows.</p>
+            <span class="badge bg-primary">Concepts</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <a class="card h-100 text-decoration-none" href="html.html">
+          <div class="card-body">
+            <h5 class="card-title">HTML</h5>
+            <p class="card-text">Semantic structure, forms, accessibility, and SEO basics.</p>
+            <span class="badge bg-success">Structure</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <a class="card h-100 text-decoration-none" href="css.html">
+          <div class="card-body">
+            <h5 class="card-title">CSS</h5>
+            <p class="card-text">Box model, Flexbox/Grid layouts, responsive design, and animations.</p>
+            <span class="badge bg-info">Design</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <a class="card h-100 text-decoration-none" href="bootstrap.html">
+          <div class="card-body">
+            <h5 class="card-title">Bootstrap</h5>
+            <p class="card-text">Grid system, components, utilities, and customization.</p>
+            <span class="badge bg-warning text-dark">Framework</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <a class="card h-100 text-decoration-none" href="javascript.html">
+          <div class="card-body">
+            <h5 class="card-title">JavaScript</h5>
+            <p class="card-text">DOM, events, fetch API, validation, and localStorage demo.</p>
+            <span class="badge bg-danger">Logic</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta-section container my-5 text-center">
+    <h2 class="fw-bold mb-3">Ready to Dive Deeper?</h2>
+    <p class="mb-4">Click below to explore concepts and interactive demos of Full Stack Development.</p>
+    <a href="fullstack.html" class="btn btn-primary btn-lg"> Explore Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-4">
+    <div class="container small">© 2025 | ePortfolio for CET138 | Designed with using Bootstrap</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <script src="assets/script.js"></script>
 </body>
+
 </html>
